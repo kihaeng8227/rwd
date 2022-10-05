@@ -1,0 +1,266 @@
+@charset "utf-8";
+/* 초기화 */
+body, h1, h2, p ,ul {
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+ul li {
+  list-style: none;
+}
+a {
+  text-decoration: #000; color: #575757;
+}
+address {
+  font-style: normal;
+}
+small {
+  font-size: 1em;
+}
+hr {
+  display: none;
+}
+.hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+
+
+/* 헤더 */
+#header{
+  width: 100%;
+  height: 100px;
+  background: #cdd499;
+  border-bottom: 5px solid #000;
+  display: flex;
+  justify-content: center;
+}
+#header h1{
+  position: absolute;
+  top: 30px;
+  left: 50px;
+}
+#header h1 a{
+
+}
+.gnbView{
+  display: none;
+}
+
+
+
+/* 멤버십 */
+#membership{
+  position: absolute;
+  top: 35px;
+  right: 50px;
+}
+#membership ul{
+  display: flex;
+}
+#membership ul li{
+  margin-left: 20px;
+}
+#membership ul li a{
+  font-size: 14px;
+}
+
+
+
+/* gnb */
+#gnb{
+  margin-top: 35px;
+}
+#gnb ul{
+  display: flex;
+}
+#gnb ul li{
+  margin: 0 20px;
+}
+#gnb ul li a{
+
+}
+
+
+
+/* 이벤트 */
+#event{
+  width: 100%;
+  height: 500px;
+  background: #626262;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#event h2{
+  color: #fff;
+  /* font-size: 100px; */
+}
+#event p{
+  margin: 20px 0 100px;
+  color: #fff;
+  /* font-size: 50px; */
+}
+#event a{
+  color: #fff;
+  display: block;
+  width: 200px;
+  height: 30px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+}
+#event a:hover{
+  background: #fff;
+  color: #000;
+}
+
+
+
+/* 본문 */
+main {
+  width: 1200px;
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+main > section {
+  width: 25%;
+  height: 300px;
+}
+#content1{
+  background: #fed543;
+}
+#content2{
+  background: #08cc33;
+}
+#content3{
+  background: #437dfe;
+}
+#content4{
+  background: #ca50d5;
+}
+
+
+
+/* 푸터 */
+#footer {
+  width: 100%;
+  padding: 50px 0;
+  background: #414141;
+  color: #fff;
+}
+
+@media all and (min-width:1200px) {
+  main > section{
+    width: 25%;
+  }
+  #event h2{
+    font-size: 100px;
+  }
+  #event p{
+    font-size: 30px;
+  }
+}
+
+@media all and (max-width:1199px) {
+  main {
+    width: 100%;
+  }
+  main > section {
+    width: 25%;
+  }
+  #event h2{
+    font-size: 8vw;
+  }
+  #event p{
+    font-size: 2vw;
+  }
+}
+
+@media all and (max-width: 800px) {
+  #header h1{
+    position: static;
+    margin-top: 25px;
+  }
+  .gnbView{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    display: block;
+  }
+  #gnb{
+    /* display: none; */
+  }
+  main > section{
+    width: 50%;
+  }
+  #event h2{
+    font-size: 32px;
+  }
+  #event p{
+    font-size: 16px;
+  }
+  .gnbView::before{
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    transition: 0.2s;
+  }
+  .gnbView::after{
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    top: 24px;
+    left: 5px;
+    transition: 0.2s;
+  }
+  .gnbView:hover::before{ transform: rotate(45deg); top: 20px;}
+  .gnbView:hover::after{transform: rotate(-45deg); top: 20px;}
+  
+  #gnb{
+    position: fixed;
+    background: #35437d;
+    height: 100vh;
+    width: 200px;
+    margin: 0;
+    left: -200px;
+    transition: 0.5s;
+  }
+  #gnb ul{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+  }
+  #gnb ul li{
+    line-height: 100px;
+  }
+  #gnb ul li a{
+    color: #fff;
+  }
+
+}
+
+@media all and (max-width: 600px) {
+  main > section{
+    width: 100%;
+  }
+  #membership ul{
+    display: block;
+    text-align: right;
+  }
+}
